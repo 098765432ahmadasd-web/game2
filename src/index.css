@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-chivo: 'Chivo', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-space-grotesk: 'Space Grotesk', sans-serif;
+    --font-space-mono: 'Space Mono', monospace;
+
+    --color-apex-red: #ff1a35;
+    --color-corsa-crimson: #ff334b;
+    --color-telemetry-cyan: #00f0ff;
+    --color-asphalt-abyss: #0a0a0c;
+    --color-carbon-charcoal: #141419;
+    --color-cockpit-slate: #1f1f26;
+    --color-titanium-white: #f5f5f7;
+    --color-exhaust-silver: #8e8e99;
+    --color-delta-green: #00e676;
+  }
+
+  body {
+    font-family: var(--font-space-grotesk);
+    background-color: #0a0a0c;
+    color: #e5e1e4;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-chivo);
+  }
+
+  .font-mono, [data-mono] {
+    font-family: var(--font-space-mono);
+  }
+}
+
+/* Precision Chamfered Geometries */
+.chamfer-btn {
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.chamfer-badge {
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+}
+
+.chamfer-card-tr {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+
+.chamfer-card-br {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+
+.chamfer-tab {
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+}
+
+/* Laser-etched perimeter borders */
+.laser-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.laser-border:hover, .laser-border-active {
+  border-color: rgba(255, 26, 53, 0.6);
+  box-shadow: 0 0 24px rgba(255, 26, 53, 0.12);
+}
+
+.laser-border-cyan:hover, .laser-border-cyan-active {
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.12);
+}
+
+/* Luminous Crimson Ambient Glows */
+.glow-apex {
+  box-shadow: 0 8px 32px rgba(255, 26, 53, 0.22), inset 0 1px 0 rgba(255, 51, 75, 0.4);
+}
+
+.glow-telemetry {
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.18), inset 0 1px 0 rgba(0, 240, 255, 0.4);
+}
+
+.glow-btn-hover:hover {
+  box-shadow: 0 0 24px rgba(255, 26, 53, 0.65);
+}
+
+/* Carbon weave subtle background */
+.carbon-pattern {
+  background-color: #141419;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 12px 12px;
+}
+
+/* Custom Cockpit Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #262630;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff1a35;
+}
+
+@keyframes revLimitFlash {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px #ff1a35); }
+  50% { opacity: 0.3; }
+}
+
+.animate-rev-flash {
+  animation: revLimitFlash 0.14s infinite alternate;
+}
